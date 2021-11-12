@@ -43,11 +43,11 @@ data class Component(
         @ColumnTransformer(
                 read =  "pgp_sym_decrypt(" +
                         "    rel_amount::bytea, " +
-                        "    'hallo123'" +
+                        "    current_setting('key.recipe')" +
                         ")",
                 write = "pgp_sym_encrypt( " +
                         "    ?::text, " +
-                        "    'hallo123'" +
+                        "    current_setting('key.recipe')" +
                         ") "
         )
         @Column(columnDefinition = "bytea")
