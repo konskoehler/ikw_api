@@ -5,5 +5,5 @@ import com.ssn.ikw_api.model.Packaging
 import org.springframework.data.repository.CrudRepository
 
 interface IngredientRepository : CrudRepository<Ingredient, Long> {
-    fun findByName(name: String): Ingredient?
+    fun findByExternalId(externalId: Long): Ingredient?
 }

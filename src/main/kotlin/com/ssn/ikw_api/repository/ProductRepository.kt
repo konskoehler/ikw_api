@@ -4,5 +4,5 @@ import com.ssn.ikw_api.model.Product
 import org.springframework.data.repository.CrudRepository
 
 interface ProductRepository : CrudRepository<Product, Long> {
-    fun findByName(name: String): Product?
+    fun findByExternalId(externalId: Long): Product?
 }
